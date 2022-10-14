@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title -->
+    <title>Temperature Converter</title>
+    <!-- title icon -->
+    <link rel="shortcut icon" href="img/temp-hot-line.png" type="image/x-icon">
+    <!-- link for css -->
+    <link rel="stylesheet" href="main.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+    <!-- meta tags -->
+    <link rel="image_src" href="img/website cover.jpg">
+    <meta property="og:description"
+        content="Ohhh I see, you wanna convert temps? This website is made by Arem and I hope you like it :>" />
+    <meta property="og:title" content="Lezgoo just pick what you want to convert and we will do it for you!" />
+</head>
+
+<body>
+
+    <!-- for background blur and image -->
+    <div class="main"></div>
+    <!-- wrapper so you can adjust width to become responsive -->
+    <div class="grid">
+        <!-- title -->
+        <h1>TEMPERATURE CONVERTER</h1>
+        <!-- grid first column -->
+        <div class="grid-1">
+            <!-- temperatures for first column -->
+            <select name="temperatures" id="firstTemps" onchange="getSelectedValue()">
+                <!-- options for first column  -->
+                <option selected disabled hidden>Select Temperature</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="celsius">Celsius</option>
+            </select>
+            <!-- first column input where user can type -->
+            <input type="text" id="firstInput" placeholder="Oh come on! Type it out">
+        </div>
+        <!-- grid second column -->
+        <div class="grid-2">
+            <!--temperatrues for second column-->
+            <select name="temperatures" id="secondTemps" onchange="getSelectedValue()">
+                <!-- options for second column -->
+                <option selected disabled hidden>Select Temperature</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="kelvin">Kelvin</option>
+                <option value="celsius">Celsius</option>
+            </select>
+            <!-- second column input where user receives result -->
+            <input type="text" onkeydown="return false" id="secondInput" placeholder="Result here!">
+        </div>
+        <h4 id="warning">You can't select both of em</h4>
+    </div>
+    <!-- link for javascript -->
+    <script src="main.js"></script>
+</body>
+
+</html>

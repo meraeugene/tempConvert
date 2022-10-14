@@ -1,0 +1,198 @@
+/* default */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+
+.main {
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: 0px 100%;
+    position: relative;
+}
+
+
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: .5em;
+    font-size: 2.4rem;
+}
+
+h4 {
+    color: red;
+    display: none;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.grid {
+    width: 40%;
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.grid-1 input {
+    width: 100%;
+    padding: .6em;
+    border-radius: 5px;
+    outline: none;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.grid-2 select,
+.grid-1 select {
+    font-size: 1.2rem;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding: .3em;
+    background-color: #C7E874;
+    color: black;
+    border: 2px solid #F99760;
+}
+
+.grid-2 select {
+    margin-top: 30px;
+}
+
+.grid-2 input {
+    width: 100%;
+    padding: .6em;
+    border-radius: 5px;
+    outline: none;
+    background-color: black;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: white;
+    cursor: not-allowed;
+}
+
+/* for screen smaller than 320 px */
+
+@media screen and (max-width: 320px) {
+    .grid {
+        width: 90%;
+        left: 50%;
+    }
+
+    .main {
+        background-position: 100%;
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+    }
+
+    h1 {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: 3px solid #f1f1f1;
+        padding: 7px;
+    }
+
+    .grid-1 input,
+    .grid-2 input {
+        font-size: .9rem;
+    }
+
+
+}
+
+/* for screen starting from 320px size */
+@media screen and (min-width: 320px) {
+    .grid {
+        width: 90%;
+        left: 50%;
+    }
+
+    .main {
+        background-position: 100%;
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: 3px solid #f1f1f1;
+        padding: 10px;
+    }
+
+    .grid-1 input,
+    .grid-2 input {
+        font-size: 1rem;
+    }
+
+}
+
+/* for screen starting from 576px size */
+@media screen and (min-width: 576px) {
+    .grid {
+        width: 80%;
+    }
+
+    .grid-1 input,
+    .grid-2 input {
+        font-size: 1.5rem;
+    }
+
+    .grid-1 select,
+    .grid-2 select {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    h1 {
+        padding: 15px;
+    }
+}
+
+/* for screen starting from 767px size */
+@media screen and (min-width: 767px) {
+    h1 {
+        padding: 15px;
+    }
+
+    .grid {
+        width: 70%;
+    }
+}
+
+/* for screen starting from 1040px size */
+@media screen and (min-width: 1040px) {
+    .grid {
+        width: 40%;
+        left: 25%;
+    }
+
+    .main {
+        filter: none;
+        background-position: 0px 100%;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+        padding: 15px;
+    }
+}
