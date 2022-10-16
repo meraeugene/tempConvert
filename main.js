@@ -5,65 +5,81 @@ const warning = document.querySelector('#warning')
 
 // to get sepecific value of select tags
 const getSelectedValue = () => {
+    //assigning the temps value in select options to a value
     const selectedValueFirst = document.querySelector('#firstTemps').value;
     const selectedValueSecond = document.querySelector('#secondTemps').value;
 
-    //conditional statement if both value are selected , and condition only works if both are true
-    if (selectedValueFirst == 'celsius' && selectedValueSecond == 'fahrenheit') {
-        //functions created
-        celsiusToFahrenheit();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'celsius' && selectedValueSecond == 'kelvin') {
-        //functions created
-        celsiusToKelvin();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'kelvin' && selectedValueSecond == 'celsius') {
-        //functions created
-        kelvinToCelsius();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'kelvin' && selectedValueSecond == 'fahrenheit') {
-        //functions created 
-        kelvinToFahrenheit();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'celsius') {
-        //functions created
-        fahrenheitToCelsius();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'kelvin') {
-        //functions created
-        fahrenheitToKelvin();
-        hideWarning();
-        enabledType();
-        changeTemp();
-        cursorNotAllowed();
-    } else if (selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'fahrenheit') {
-        //functions created
-        displayWarning();
-        disabledType();
-    } else if (selectedValueFirst == 'kelvin' && selectedValueSecond == 'kelvin') {
-        //functions created
-        displayWarning();
-        disabledType();
-    } else if (selectedValueFirst == 'celsius' && selectedValueSecond == 'celsius') {
-        //functions created
-        displayWarning();
-        disabledType();
-    }
+    //ternary operators and returns null if false or empty 
+    selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'celsius' ? firstConvertion() : null; //first convertion
+    selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'kelvin' ? secondConvertion() : null;//second convertion
+    selectedValueFirst == 'kelvin' && selectedValueSecond == 'celsius' ? thirdConvertion() : null;//third convertion
+    selectedValueFirst == 'kelvin' && selectedValueSecond == 'fahrenheit' ? fourthConvertion() : null; //fourth convertion
+    selectedValueFirst == 'celsius' && selectedValueSecond == 'fahrenheit' ? fifthConvertion() : null; //fifth convertion
+    selectedValueFirst == 'celsius' && selectedValueSecond == 'kelvin' ? sixConvertion() : null; //six convertion
+    selectedValueFirst == 'celsius' && selectedValueSecond == 'celsius' ? invalidTemps() : null;
+    selectedValueFirst == 'kelvin' && selectedValueSecond == 'kelvin' ? invalidTemps() : null;
+    selectedValueFirst == 'fahrenheit' && selectedValueSecond == 'fahrenheit' ? invalidTemps() : null;
+}
+
+
+//if fahrenheit to celsius selected this function performs
+const firstConvertion = () => {
+    fahrenheitToCelsius();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if fahrenheit to kelvin selected this function performs
+const secondConvertion = () => {
+    fahrenheitToKelvin();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if kelvin to celsius selected this function performs
+const thirdConvertion = () => {
+    kelvinToCelsius();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if kelvin to fahrenheit selected this function performs
+const fourthConvertion = () => {
+    kelvinToFahrenheit();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if celsius to fahrenheit selected this function performs
+const fifthConvertion = () => {
+    celsiusToFahrenheit();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if celsius to kelvin selected this function peforms
+const sixConvertion = () => {
+    celsiusToKelvin();
+    hideWarning();
+    enabledType();
+    changeTemp();
+    cursorNotAllowed();
+}
+
+//if temps were both selected this function performs
+const invalidTemps = () => {
+    displayWarning();
+    disabledType();
 }
 
 // to make the cursor not allowed so that user can't type
