@@ -4,9 +4,9 @@ const secondInput = document.querySelector('#secondInput');
 const warning = document.querySelector('#warning')
 
 // to get sepecific value of select tags
-function getSelectedValue() {
-    let selectedValueFirst = document.querySelector('#firstTemps').value;
-    let selectedValueSecond = document.querySelector('#secondTemps').value;
+const getSelectedValue = () => {
+    const selectedValueFirst = document.querySelector('#firstTemps').value;
+    const selectedValueSecond = document.querySelector('#secondTemps').value;
 
     //conditional statement if both value are selected , and condition only works if both are true
     if (selectedValueFirst == 'celsius' && selectedValueSecond == 'fahrenheit') {
@@ -67,12 +67,12 @@ function getSelectedValue() {
 }
 
 // to make the cursor not allowed so that user can't type
-function cursorNotAllowed() {
+const cursorNotAllowed = () => {
     secondInput.style.cursor = 'not-allowed'
 }
 
 //if both temperatures were chosen
-function disabledType() {
+const disabledType = () => {
     firstInput.disabled = true;
     secondInput.disabled = true;
     secondInput.style.cursor = 'not-allowed';
@@ -84,13 +84,13 @@ function disabledType() {
 }
 
 //to make the input value empty when changing temperatures
-function changeTemp() {
+const changeTemp = () => {
     firstInput.value = '';
     secondInput.value = '';
 }
 
 //so that user can type
-function enabledType() {
+const enabledType = () => {
     firstInput.disabled = false;
     secondInput.disabled = false;
     secondInput.style.cursor = 'text';
@@ -100,17 +100,17 @@ function enabledType() {
 }
 
 //display warning if both temperatures are chosen
-function displayWarning() {
-    warning.style.display = 'block';
+const displayWarning = () => {
+    return warning.style.display = 'block';
 }
 
 //hide warning when both temperatures are changed by the user
-function hideWarning() {
-    warning.style.display = 'none';
+const hideWarning = () => {
+    return warning.style.display = 'none';
 }
 
 //convert celsius to fahrenheit
-function celsiusToFahrenheit() {
+const celsiusToFahrenheit = () => {
     firstInput.addEventListener("input", function () { //add function to first input
         let value = firstInput.value; //assign the inputted value to value
         let cToF; //declare variable
@@ -126,7 +126,7 @@ function celsiusToFahrenheit() {
 
 
 //convert celsius to kelvin
-function celsiusToKelvin() {
+const celsiusToKelvin = () => {
     firstInput.addEventListener("input", function () {
         let value = firstInput.value;
         value = Number(value);
@@ -141,7 +141,7 @@ function celsiusToKelvin() {
 }
 
 //convert kelvin to celsius
-function kelvinToCelsius() {
+const kelvinToCelsius = () => {
     firstInput.addEventListener("input", function () {
         let value = firstInput.value;
         let kToC;
@@ -156,7 +156,7 @@ function kelvinToCelsius() {
 }
 
 // convert kelvin to fahrenheit
-function kelvinToFahrenheit() {
+const kelvinToFahrenheit = () => {
     firstInput.addEventListener("input", function () {
         let value = firstInput.value;
         let kToF;
@@ -171,7 +171,7 @@ function kelvinToFahrenheit() {
 }
 
 // convert fahrenheit to celsius
-function fahrenheitToCelsius() {
+const fahrenheitToCelsius = () => {
     firstInput.addEventListener("input", function () {
         let value = firstInput.value;
         let fToC;
@@ -186,7 +186,7 @@ function fahrenheitToCelsius() {
 }
 
 //convert fahrenheit to kelvin
-function fahrenheitToKelvin() {
+const fahrenheitToKelvin = () => {
     firstInput.addEventListener("input", function () {
         let value = firstInput.value;
         let fToK;
